@@ -218,7 +218,8 @@ socialShareButtons.forEach(function (button) {
 
 
     <!-- Navbar Start -->
-    <div class="container-fluid sticky-top">
+<header class="header_area">
+    <div class="container-fluid fixed-top">
         <div class="container">
             <nav class="navbar navbar-expand-lg navbar-light p-0">
                 <a href="index.html" class="navbar-brand">
@@ -233,20 +234,178 @@ socialShareButtons.forEach(function (button) {
                         <a href="#home" class="nav-item nav-link active">Home</a>
                         <a href="#about" class="nav-item nav-link">About</a>
                         <a href="#product" class="nav-item nav-link">Products</a>
-                                <a href="#feature" class="nav-item nav-link">Features</a>
-                                <a href="#how-to-use" class="nav-item nav-link">How To Use</a>
-                                <a href="#testimonial" class="nav-item nav-link">Review</a>
-                        
+                        <a href="#feature" class="nav-item nav-link">Features</a>
+                        <a href="#how-to-use" class="nav-item nav-link">How To Use</a>
+                        <a href="#testimonial" class="nav-item nav-link">Review</a>
                         <a href="#contact" class="nav-item nav-link">Contact</a>
                     </div>
-                    <a href="" class="btn btn-dark py-2 px-4 d-none d-lg-inline-block">Shop Now</a>
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#shopNowBtn">
+                        Order Now
+                    </button>
                 </div>
             </nav>
         </div>
     </div>
+</header>
+
     <!-- Navbar End -->
+<div class="modal fade" id="shopNowBtn" tabindex="-1" aria-labelledby="shopNowBtnLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="shopNowBtnLabel">Order Now - Hair Shampoo </h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+       <div class="modal-body" style="background-image: url('https://media.istockphoto.com/id/1208448438/photo/soap-suds-background.webp?a=1&b=1&s=612x612&w=0&k=20&c=m8sjF-XoNfLaJ4gb_79-ooQEBEiNYsQaJFAwMdpIaIo='); background-size: cover; background-position: center;">
+                    <div class="icon">   <i class="fa fa-tourist"></i></div>
 
+       
+        
+        <form id="shampooOrderForm">
+          <div class="container">
+          <!-- Shampoo Type Selection -->
 
+          <div class="row">
+          <div class="col">
+            <label for="shampooType" class="form-label">Shampoo Type</label>
+            <select class="form-select" id="shampooType" required>
+              <option selected disabled>Select Shampoo Type</option>
+              <option value="moisturizing">Moisturizing Shampoo</option>
+              <option value="volumizing">Volumizing Shampoo</option>
+              <option value="anti-dandruff">Anti-Dandruff Shampoo</option>
+              <option value="color-protect">Color-Protect Shampoo</option>
+              <option value="clarifying">Clarifying Shampoo</option>
+            </select>
+          </div>
+
+          <div class="col">
+            <label for="quantity" class="form-label">Quantity</label>
+            <input type="number" class="form-control" id="quantity" placeholder="Enter quantity" min="1" max="10" required>
+          </div>
+
+</div>
+          <!-- Quantity Selection -->
+          
+          
+          <!-- Customer Information -->
+          <div class="row">
+            <div class="col">
+              <label for="customerName" class="form-label">Full Name</label>
+              <input type="text" class="form-control" id="customerName" placeholder="Enter your full name" required>
+            </div>
+            <div class="col">
+              <label for="customerEmail" class="form-label">Email Address</label>
+              <input type="email" class="form-control" id="customerEmail" placeholder="Enter your email" required>
+            </div>
+          </div>
+          
+          <!-- Shipping Information -->
+          <div class="mb-3">
+            <label for="shippingAddress" class="form-label">Shipping Address</label>
+            <input type="text" class="form-control" id="shippingAddress" placeholder="Enter your shipping address" required>
+          </div>
+
+          <!-- Additional Notes -->
+          <div class="mb-3">
+            <label for="orderNotes" class="form-label">Order Notes</label>
+            <textarea class="form-control" id="orderNotes" rows="3" placeholder="Any specific instructions?" required></textarea>
+          </div>
+
+          <!-- Submit Button -->
+          <button type="submit" class="btn btn-success w-100">Place Order</button>
+        </form>
+      </div>
+      </div>
+    </div>
+  </div>
+</div>
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<!-- Button Trigger for Modal -->
+<div class="d-flex justify-content-center">
+  <button type="button" id="buyNowBtn" class="btn btn-primary">Buy Now</button>
+</div>
+
+<!-- Modal Structure -->
+<div class="modal fade" id="buyNowModal" tabindex="-1" aria-labelledby="buyNowModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="buyNowModalLabel">Buy Now - Select Shampoo and Payment</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body" style="background-image: url('https://media.istockphoto.com/id/1316145932/photo/table-top-view-of-spicy-food.webp?a=1&b=1&s=612x612&w=0&k=20&c=scseGeDCjSghwD2RELSaaT2Pn2NQz0gflEQ4BuiTSjs='); background-size: cover; background-position: center;">
+                    <div class="icon">   <i class="fa fa-tourist"></i></div>
+        
+
+        <form id="shampooBuyForm">
+          
+          <!-- Shampoo Type Selection -->
+          <div class="mb-3">
+            <label for="shampooType" class="form-label">Shampoo Type</label>
+            <select class="form-select" id="shampooType" required>
+              <option selected disabled>Select Shampoo Type</option>
+              <option value="moisturizing">Moisturizing Shampoo</option>
+              <option value="volumizing">Volumizing Shampoo</option>
+              <option value="anti-dandruff">Anti-Dandruff Shampoo</option>
+              <option value="color-protect">Color-Protect Shampoo</option>
+              <option value="clarifying">Clarifying Shampoo</option>
+            </select>
+          </div>
+
+          <!-- Quantity Selection -->
+          <div class="mb-3">
+            <label for="quantity" class="form-label">Quantity</label>
+            <input type="number" class="form-control" id="quantity" placeholder="Enter quantity" min="1" max="10" required>
+          </div>
+
+          <!-- Payment Method Selection -->
+          <div class="mb-3">
+            <label class="form-label">Choose Payment Method</label>
+            <div class="d-flex justify-content-around">
+              <button type="button" class="btn btn-outline-primary payment-option" data-bs-toggle="modal" data-target="#paytmQR" data-qr="paytm">Paytm</button>
+              <button type="button" class="btn btn-outline-success payment-option" data-bs-toggle="modal" data-target="#googlePayQR" data-qr="googlePay">Google Pay</button>
+            </div>
+          </div>
+
+          <!-- QR Code Images for Payment Options -->
+          <div id="qrCodeContainer" class="text-center mt-4" style="display: none;">
+            <h6>Scan to Pay</h6>
+            <img id="qrCodeImage" src="" alt="QR Code" style="width: 200px; height: 200px;">
+          </div>
+
+          <!-- Submit Button -->
+          <button type="submit" class="btn btn-success w-100 mt-3">Place Order</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- JavaScript to Show QR Code on Payment Option Click -->
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const paymentOptions = document.querySelectorAll('.payment-option');
+    const qrCodeContainer = document.getElementById('qrCodeContainer');
+    const qrCodeImage = document.getElementById('qrCodeImage');
+
+    paymentOptions.forEach(option => {
+      option.addEventListener('click', function() {
+        const selectedQR = this.getAttribute('data-qr');
+        
+        if (selectedQR === 'paytm') {
+          qrCodeImage.src = 'path_to_your_paytm_qr_code.png'; // replace with actual Paytm QR code image path
+        } else if (selectedQR === 'googlePay') {
+          qrCodeImage.src = 'path_to_your_googlepay_qr_code.png'; // replace with actual Google Pay QR code image path
+        }
+
+        qrCodeContainer.style.display = 'block';
+      });
+    });
+  });
+</script>
     <!-- Hero Start -->
     <div class="container-fluid bg-primary hero-header mb-5" id="home">
         <div class="container">
@@ -257,8 +416,11 @@ socialShareButtons.forEach(function (button) {
                     <p class="text-white mb-4 animated slideInRight">Lorem ipsum dolor sit amet, consectetur adipiscing
                         elit. Etiam feugiat rutrum lectus, sed auctor ex malesuada id. Orci varius natoque penatibus et
                         magnis dis parturient montes.</p>
-                    <a href="" class="btn btn-dark py-2 px-4 me-3 animated slideInRight">Shop Now</a>
-                    <a href="" class="btn btn-outline-dark py-2 px-4 animated slideInRight">Contact Us</a>
+                  
+                  
+  <button type="button"  data-toggle="modal" data-target="#buyNowModal" class="btn btn-warning">Buy Now</button>
+
+<a href="#contact" class="btn btn-outline-dark py-2 px-4 animated slideInRight">Contact Us</a>
                 </div>
                 <div class="col-lg-6">
                     <img class="img-fluid animated pulse infinite" src="img/shampoo.png" alt="">
@@ -1102,7 +1264,7 @@ iframe.goog-te-menu-frame {
         .copyright {
             text-align: center;
             padding: 10px 0;
-            background-color: #f8f9fa;
+            background-color: #007bff;
             border-top: 1px solid #e0e0e0;
         }
         .copyright span {
