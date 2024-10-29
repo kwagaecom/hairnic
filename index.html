@@ -231,13 +231,13 @@ socialShareButtons.forEach(function (button) {
                 </button>
                 <div class="collapse navbar-collapse" id="navbarCollapse">
                     <div class="navbar-nav ms-auto">
-                        <a href="#home" class="nav-item nav-link active">Home</a>
-                        <a href="#about" class="nav-item nav-link">About</a>
-                        <a href="#product" class="nav-item nav-link">Products</a>
-                        <a href="#feature" class="nav-item nav-link">Features</a>
-                        <a href="#how-to-use" class="nav-item nav-link">How To Use</a>
-                        <a href="#testimonial" class="nav-item nav-link">Review</a>
-                        <a href="#contact" class="nav-item nav-link">Contact</a>
+                        <a href="#home" class="nav-item nav-link active" onclick="collapseNavbar()">Home</a>
+                        <a href="#about" class="nav-item nav-link" onclick="collapseNavbar()">About</a>
+                        <a href="#product" class="nav-item nav-link" onclick="collapseNavbar()">Products</a>
+                        <a href="#feature" class="nav-item nav-link" onclick="collapseNavbar()">Features</a>
+                        <a href="#how-to-use" class="nav-item nav-link" onclick="collapseNavbar()">How To Use</a>
+                        <a href="#testimonial" class="nav-item nav-link" onclick="collapseNavbar()">Review</a>
+                        <a href="#contact" class="nav-item nav-link" onclick="collapseNavbar()">Contact</a>
                     </div>
                     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#shopNowBtn">
                         Order Now
@@ -247,6 +247,20 @@ socialShareButtons.forEach(function (button) {
         </div>
     </div>
 </header>
+
+<script>
+function collapseNavbar() {
+    var navbarCollapse = document.getElementById("navbarCollapse");
+    var navbarToggler = document.querySelector(".navbar-toggler");
+
+    // Check if the navbar is currently expanded and then toggle it
+    if (navbarCollapse.classList.contains("show")) {
+        new bootstrap.Collapse(navbarCollapse).toggle();
+        navbarToggler.classList.add("collapsed"); // Reset hamburger icon to collapsed state
+    }
+}
+</script>
+
 
     <!-- Navbar End -->
 <div class="modal fade" id="shopNowBtn" tabindex="-1" aria-labelledby="shopNowBtnLabel" aria-hidden="true">
